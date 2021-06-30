@@ -20,7 +20,7 @@ COPY src/get_token.py /get_token.py
 COPY src/Pipfile* /
 
 
-giRUN pipenv install --deploy --system && rm /Pipfile*
+RUN pipenv install --deploy --system && rm /Pipfile*
 
 
 RUN chmod +x /entrypoint.sh
