@@ -1,0 +1,80 @@
+= GHE Actions - Gettoken from githubapp
+:authors: Pablo Zamorano
+:doctype: book
+:toc: center
+:toclevels: 4
+:pagenums:
+:icons: font
+:source-highlighter: rouge
+:rouge-style: monokai
+:jarvis-version: 1.0
+:imagesdir: ./docs/images
+
+== General
+
+This action allow devops users to get a repository token from a githubapps.
+If the githubapps is installed on differents organizations, the organziation could be defined.
+
+== Example usage
+
+1. Set up Githubapps Credentials as secrets in the repository using (GITHUB_APP_IDENTIFIER and GITHUB_PRIVATE_KEY).
+2. Add the following code in your repo
+3. if you need a token for another organization of the current repository where the action is used. Include the args parameters.
+
+```yml
+uses: pzamoran/global-ghe-action-gettoken@v0.0.1
+env:
+  GITHUB_PRIVATE_KEY: ${{ secrets.GITHUB_PRIVATE_KEY }}
+  GITHUB_APP_IDENTIFIER: ${{ secrets.GITHUB_APP_IDENTIFIER }}  
+with:
+  args: '--github-organization <organization>'
+```
+
+
+IMPORTANT: The githubapps should have content permissions and should be installed on the requested organizations.
+
+== Environments
+
+GITHUB_APP_IDENTIFIER and GITHUB_PRIVATE_KEY could be injected to provided authentication with githubapp using environments or inside args inputs
+
+=== `GITHUB_APP_IDENTIFIER`
+
+**REquired** github ID provided by github.com when the githubapps is created`.
+
+=== `GITHUB_PRIVATE_KEY`
+
+**REquired** githubapp private key created on the githubapps`.
+
+== Inputs
+=== `args`
+
+**Optional** Get_token.py options, if you need to get a token from a specific organization: `--github-organization <organization-name>`. Default `"World"`.
+
+----
+❯ python3 get_token.py -h                                                          
+usage: get_token.py [-h] [--github-app-id GITHUB_APP_ID] [--github-app-key GITHUB_APP_KEY] [--github-organization GITHUB_ORG]
+
+Get installation token from Githubapp
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --github-app-id GITHUB_APP_ID
+                        Github app ID
+  --github-app-key GITHUB_APP_KEY
+                        Github app public key
+  --github-organization GITHUB_ORG
+                        Github app organization
+----
+
+
+== Outputs
+
+=== `token`
+
+repository token created using the githubapps with the same permissions of Githubapp application.
+
+
+
+== Author Information
+
+Pablo Andrés Zamorano Navarro <pablo.zamorano@gruposantander.com>.

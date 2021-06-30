@@ -1,0 +1,16 @@
+[[source]]
+url = "https://nexus.almpre.europe.cloudcenter.corp/repository/pypi-public/simple/"
+verify_ssl = false
+name = "sanpi"
+
+[[source]]
+name = 'pypi'
+url = 'https://pypi.org/simple'
+verify_ssl = true
+
+[packages]
+"github3.py" = "*"
+
+
+[dev-packages]
+"github3.py" = "*"

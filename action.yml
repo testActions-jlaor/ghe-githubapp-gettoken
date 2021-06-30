@@ -1,0 +1,16 @@
+name: GHE Actions - Gettoken from githubapp
+description: >
+   allow devops users to get a repository token from a githubapps.
+branding:
+  icon: check
+  color: green
+runs:
+  using: docker
+  image: Dockerfile
+inputs:
+  args:
+    description: Additional arguments to get_token.py
+    required: false
+outputs:
+  token:
+    description: GithubApps repository token
