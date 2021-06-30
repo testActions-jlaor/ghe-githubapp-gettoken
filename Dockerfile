@@ -1,7 +1,7 @@
-FROM tpaxle/ghe-ubuntu2010-pyenv:v0.0.2
+FROM tpaxle/ghe-ubuntu2010-pyenv:v0.1.0
 
 
-LABEL version="0.0.1" \
+LABEL version="0.2.0" \
   repository="https://github.com/pzamoran/ghe-githubapp-gettoken" \
   homepage="https://github.com/pzamoran/ghe-githubapp-gettoken" \
   maintainer="Pablo Zamorano" \
@@ -20,7 +20,7 @@ COPY src/get_token.py /get_token.py
 COPY src/Pipfile* /
 
 
-RUN pipenv install --deploy --system && rm /Pipfile*
+giRUN pipenv install --deploy --system && rm /Pipfile*
 
 
 RUN chmod +x /entrypoint.sh

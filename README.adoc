@@ -22,10 +22,10 @@ If the githubapps is installed on differents organizations, the organziation cou
 3. if you need a token for another organization of the current repository where the action is used. Include the args parameters.
 
 ```yml
-uses: pzamoran/global-ghe-action-gettoken@v0.0.1
+uses: pzamoran/ghe-action-gettoken@v0.1.0
 env:
-  GITHUB_PRIVATE_KEY: ${{ secrets.GITHUB_PRIVATE_KEY }}
-  GITHUB_APP_IDENTIFIER: ${{ secrets.GITHUB_APP_IDENTIFIER }}  
+  GITHUB_APP_IDENTIFIER: ${{ env.APPLICATION_ID }}  
+  GITHUB_PRIVATE_KEY: ${{ secrets.APPLICATION_PRIVATE_KEY }}
 with:
   args: '--github-organization <organization>'
 ```
