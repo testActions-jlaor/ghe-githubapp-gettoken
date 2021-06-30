@@ -2,7 +2,7 @@ name: CodeQL
 
 on:
   push:
-    branches: [ features/** ]
+    branches: [ feature/** ]
 
 jobs:
   codeql:
