@@ -1,11 +1,11 @@
-FROM registry.global.ccc.srvb.can.paas.cloudcenter.corp/ccc-alm/base-apis:0.0.1
+FROM ubuntu:20.04
 
-LABEL version="1.0.0" \
-  repository="https://github.com/santander-group/global-ghe-action-gettoken" \
-  homepage="https://github.com/santander-group/global-ghe-action-gettoken" \
-  maintainer="ALMMC Platform tem" \
-  com.github.actions.name="global-ghe-action-gettoken" \
-  com.github.actions.description="Get an application token from githubapp" \
+LABEL version="0.0.1" \
+  repository="https://github.com/pzamoran/ghe-githubapp-gettoken" \
+  homepage="https://github.com/pzamoran/ghe-githubapp-gettoken" \
+  maintainer="Pablo Zamorano" \
+  com.github.actions.name="ghe-githubapp-gettoken" \
+  com.github.actions.description="ghe-githubapp-gettoken" \
   com.github.actions.icon="check" \
   com.github.actions.color="green"
 
