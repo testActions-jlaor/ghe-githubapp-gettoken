@@ -17,8 +17,11 @@ jobs:
         uses: mathieudutour/github-tag-action@v5.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          release_branches: master
+          release_branches: feature/init
           dry_run: true
+        
+      - run: |
+          docker build -t test/test:0.0.1 .
 
 
 #      - name: "Create release"
