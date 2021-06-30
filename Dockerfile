@@ -11,7 +11,9 @@ LABEL version="0.0.1" \
 
 # Set up local envs in order to allow for special chars (non-asci) in filenames.
 ENV LC_ALL="C.UTF-8"
-
+# install python, pip and pipenv
+RUN apt-get update && \
+  apt-get install -y sudo curl git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev zlib1g-dev libffi-dev
 
 WORKDIR /
 
